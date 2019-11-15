@@ -15,3 +15,22 @@
     <div class="reviews">154 Reviews</div>
   </div>
 </div>
+<div class="filters">
+  <div class="headers">
+    <button class="filter-type active">Men</button>
+    <button class="filter-type">Women</button>
+  </div>
+  <div class="filter-types">
+    <div class="select">
+      select color
+    </div>
+    <div class="color-selectors">
+      <span *ngFor="let color of colors" [ngClass]="{'active': selectedColor == color}">
+        <img src="../../assets/colors/{{color}}" alt="color">
+      </span>
+    </div>
+    <div class="select">
+      select size
+    </div>
+  </div>
+</div>
