@@ -102,5 +102,34 @@
         }
       }
     }
+    .size-label-guide {
+      display: flex;
+      justify-content: space-between;
+      .size-guide {
+        color: #000000;
+        line-height: 12px;
+        font-family: "Gotham HTF - Book";
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+    .sizes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .size-container {
+        display: inline-block;
+        width: 30px;
+        line-height: 30px;
+        border: 1px solid rgba(74, 74, 74, 0.5);
+        font-family: "Gotham HTF - Medium";
+        color: #000000;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 500;
+        margin: 0 8px 8px 0;
+      }
+    }
   }
 }
