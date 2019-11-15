@@ -1,0 +1,19 @@
+.pdp-details {
+  margin: 30px 50px;
+  .details {
+  }
+  .go-back {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    .filter-type {
+      line-height: 12px;
+      color: #4a4a4a;
+      font-family: "Gotham HTF - Book";
+      font-size: 10px;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-left: 5px;
+    }
+  }
+}
