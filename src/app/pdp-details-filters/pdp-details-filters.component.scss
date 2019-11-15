@@ -1,6 +1,7 @@
 .details-row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   &.name-and-price {
     margin-bottom: 8px;
     .name,
@@ -48,8 +49,6 @@
 }
 .filters {
   border: 1px solid #c8c8c8;
-  max-width: 398px;
-  height: 353px;
   margin-top: 32px;
   .headers {
     display: flex;
@@ -57,6 +56,7 @@
       width: 100%;
       line-height: 16px;
       color: #000000;
+      cursor: pointer;
       font-family: "Gotham HTF - Bold";
       font-size: 16px;
       background: #f1f1f1;
@@ -76,6 +76,7 @@
       &.active {
         color: #7dc242;
         border: none;
+        outline: none;
         background: #fff;
       }
     }
@@ -132,4 +133,25 @@
       }
     }
   }
+  .add-to-bag {
+    color: #ffffff;
+    line-height: 20px;
+    font-family: "Gotham HTF - Bold";
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #7dc242;
+  }
+}
+.shipping-range {
+  line-height: 14px;
+  color: #4a4a4a;
+  font-family: "Gotham HTF - Book";
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 20px;
+  text-align: center;
 }
