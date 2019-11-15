@@ -5,6 +5,7 @@
   padding: 0 50px;
   .filter {
     color: #000000;
+    cursor: pointer;
     font-family: "Gotham HTF - Bold";
     font-size: 12px;
     font-weight: 700;
@@ -29,10 +30,6 @@
     }
     .filter:first-child {
       margin-right: 20px;
-    }
-    .user {
-      background: url("../../assets/user.png") 686px 98px;
-      background-repeat: no-repeat;
     }
   }
   .circle-container {

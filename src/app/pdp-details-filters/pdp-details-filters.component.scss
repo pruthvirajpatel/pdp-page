@@ -96,6 +96,7 @@
     .color-selectors {
       margin-bottom: 35px;
       span {
+        cursor: pointer;
         display: inline-block;
         margin-right: 10px;
         &:last-of-type {
@@ -135,6 +136,7 @@
   }
   .add-to-bag {
     color: #ffffff;
+    cursor: pointer;
     line-height: 20px;
     font-family: "Gotham HTF - Bold";
     font-size: 16px;
