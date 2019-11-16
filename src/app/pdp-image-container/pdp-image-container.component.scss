@@ -1,0 +1,21 @@
+.image-container {
+  margin: 30px 0 0 50px;
+  .thumb-nail-images .thumb-nails,
+  .indicator-arrow {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+    margin-right: 5px;
+  }
+  .thumb-nail-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .indicator-arrow {
+      max-height: 24px;
+      .left-arrow {
+        background: url("../../assets/l-arrow.png") 613px 743px;
+      }
+    }
+  }
+}

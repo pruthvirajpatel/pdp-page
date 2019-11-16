@@ -8,6 +8,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PdpContainerComponent } from './pdp-container/pdp-container.component';
 import { PdpDetailsComponent } from './pdp-details/pdp-details.component';
 import { PdpDetailsFiltersComponent } from './pdp-details-filters/pdp-details-filters.component';
+import { PdpImageContainerComponent } from './pdp-image-container/pdp-image-container.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PdpDetailsFiltersComponent } from './pdp-details-filters/pdp-details-fi
     NavBarComponent,
     PdpContainerComponent,
     PdpDetailsComponent,
-    PdpDetailsFiltersComponent
+    PdpDetailsFiltersComponent,
+    PdpImageContainerComponent
   ],
   imports: [
     BrowserModule,

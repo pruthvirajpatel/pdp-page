@@ -1,12 +1,11 @@
 .pdp-details {
-  margin: 30px 50px;
+  margin: 0;
   max-width: 398px;
-  .details {
-  }
+  width: 398px;
   .go-back {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     .filter-type {
       line-height: 12px;
       color: #4a4a4a;
