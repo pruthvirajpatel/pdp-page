@@ -14,8 +14,10 @@
     .product {
       margin: 0 6px 0 0;
       img {
-        width: 330px;
-        height: 378px;
+        width: 100%;
+        height: max-content;
+        max-width: 330px;
+        max-height: 378px;
       }
       .name {
         line-height: 20px;

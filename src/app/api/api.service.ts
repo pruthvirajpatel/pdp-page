@@ -9,7 +9,6 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   getOptions(data): any {
-    const dataObject = data;
     const options = {
       withCredentials: true,
       params: null

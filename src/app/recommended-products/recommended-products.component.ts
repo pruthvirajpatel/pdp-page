@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service';
+import { RecommendedProductsService } from './recommended-products.service';
+import { forkJoin, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-recommended-products',
@@ -6,33 +10,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommended-products.component.scss']
 })
 export class RecommendedProductsComponent implements OnInit {
-  products = [
-    {
-      imageUrl: 'recommend-1.png',
-      name: 'White Canvas',
-      price: '$78',
-      label: 'Los Angeles Favorite'
-    },
-    {
-      imageUrl: 'recommend-2.png',
-      name: 'Grey Suede',
-      price: '$78'
-    },
-    {
-      imageUrl: 'recommend-3.png',
-      name: 'White Canvas',
-      price: '$78',
-      label: 'Sold out'
-    },
-    {
-      imageUrl: 'recommend-2.png',
-      name: 'Grey Suede',
-      price: '$78'
-    }
-  ];
-  constructor() { }
+  products = [];
+  constructor(
+    private sharedService: SharedService,
+    private recommendedProductsService: RecommendedProductsService) { }
 
   ngOnInit() {
+    this.sharedService.products$.subscribe(data => {
+      if (data && data.length) {
+        this.products = data;
+        this.getProductImages();
+      }
+    });
   }
 
+  getProductImages(): void {
+    const images = [];
+    const getImages = (id) => {
+      return this.recommendedProductsService.getProducts(id).pipe(catchError((err) => of([])));
+    };
+    this.products.forEach(data => {
+      images.push(getImages(data.id));
+    });
+    forkJoin(images).subscribe(imagesList => {
+      for (let index = 0; index < imagesList.length; index++) {
+        const product = imagesList[index];
+        if (product.length) {
+          this.products[index].url = product[0].url;
+        }
+      }
+    });
+  }
 }
