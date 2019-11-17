@@ -3,16 +3,16 @@
     You’ll Also Like
   </div>
   <div class="products-list">
-    <button class="indicator-arrow" [disabled]="activeIndex == 0" (click)="setActiveIndex(-1)">
+    <button class="indicator-arrow">
       <img src="assets/l-recommend-arrow.png" alt="left arrow" />
     </button>
     <figure class="product" *ngFor="let product of products | slice:0:4;">
-      <div class="label" *ngIf="product.label">{{product.name}}</div>
-      <img src="{{product.url}}" alt="{{product.url}}">
-      <figcaption class="name">{{product.name}}</figcaption>
-      <figcaption class="price">${{product.price}}</figcaption>
+      <div class="label" *ngIf="product.label">{{product['name']}}</div>
+      <img src="{{product['url']}}" alt="{{product['url']}}">
+      <figcaption class="name">{{product['name']}}</figcaption>
+      <figcaption class="price">${{product['price']}}</figcaption>
     </figure>
-    <button class="indicator-arrow" [disabled]="activeIndex == (products.length-1)" (click)="setActiveIndex(1)">
+    <button class="indicator-arrow">
       <img src="assets/r-recommend-arrow.png" alt="right arrow" />
     </button>
   </div>

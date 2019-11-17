@@ -10,6 +10,7 @@ import { catchError } from 'rxjs/operators';
   styleUrls: ['./recommended-products.component.scss']
 })
 export class RecommendedProductsComponent implements OnInit {
+  activeIndex = 0;
   products = [];
   constructor(
     private sharedService: SharedService,

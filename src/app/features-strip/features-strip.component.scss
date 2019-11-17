@@ -1,0 +1,20 @@
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  margin-top: 80px;
+  background-color: #f1f1f1;
+  .feature {
+    display: flex;
+    align-items: center;
+    p {
+      color: #4a4a4a;
+      font-family: "Gotham HTF - Book";
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      font-weight: 300;
+      margin-left: 10px;
+    }
+  }
+}
