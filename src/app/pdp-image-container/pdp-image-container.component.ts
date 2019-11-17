@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service';
+import { PdpImageContainerService } from './pdp-image-container.service';
 
 @Component({
   selector: 'app-pdp-image-container',
@@ -6,24 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pdp-image-container.component.scss']
 })
 export class PdpImageContainerComponent implements OnInit {
-  activeImage = 'active.png';
+  activeImage;
   activeIndex = 0;
-  thumbNails = [
-    'OCA_Low_Red_Canvas_Sneaker_Men_1.png',
-    'OCA_Low_Red_Canvas_Sneaker_Men_2.png',
-    'OCA_Low_Red_Canvas_Sneaker_Men_3.png',
-    'OCA_Low_Red_Canvas_Sneaker_Men_4.png',
-    'OCA_Low_Red_Canvas_Sneaker_Men_5.png',
-    'OCA_Low_Red_Canvas_Sneaker_Men_6.png'
-  ];
-  constructor() { }
+  thumbNails = [];
+  constructor(
+    private sharedService: SharedService,
+    private pdpImageContainerService: PdpImageContainerService) { }
 
   ngOnInit() {
+
+    this.sharedService.products$.subscribe(data => {
+      if (data && data.length) {
+        this.pdpImageContainerService.getImages(data[0].id).subscribe(
+          result => {
+            this.thumbNails = result;
+            this.activeImage = this.thumbNails[0].url;
+          }, err => {
+
+          });
+      }
+    });
   }
 
   setActiveImageAndIndex(index): void {
     this.activeIndex = index;
-    this.activeImage = this.thumbNails[index];
+    this.activeImage = this.thumbNails[index].url;
   }
 
   setActiveIndex(index): void {

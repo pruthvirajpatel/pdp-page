@@ -1,6 +1,6 @@
 <div class="image-container">
   <div class="active">
-    <img src="assets/product-images/{{activeImage}}">
+    <img src="{{activeImage}}">
   </div>
   <div class="thumb-nail-images">
     <button class="indicator-arrow" [disabled]="activeIndex == 0" (click)="setActiveIndex(-1)">
@@ -8,7 +8,7 @@
     </button>
     <div class="w3-section">
       <button class="thumb-nails" *ngFor="let image of thumbNails;let i=index" (click)="setActiveImageAndIndex(i)">
-        <img src="assets/product-images/{{image}}" alt="{{image}}" />
+        <img src="{{image.url}}" alt="{{image.url}}" />
       </button>
     </div>
     <button class="indicator-arrow" [disabled]="activeIndex == (thumbNails.length-1)" (click)="setActiveIndex(1)">
