@@ -9,6 +9,11 @@ import { PdpContainerComponent } from './pdp-container/pdp-container.component';
 import { PdpDetailsComponent } from './pdp-details/pdp-details.component';
 import { PdpDetailsFiltersComponent } from './pdp-details-filters/pdp-details-filters.component';
 import { PdpImageContainerComponent } from './pdp-image-container/pdp-image-container.component';
+import { RecommendedProductsComponent } from './recommended-products/recommended-products.component';
+import { ApiService } from './api/api.service';
+import { AppService } from './app.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedService } from './shared.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +23,15 @@ import { PdpImageContainerComponent } from './pdp-image-container/pdp-image-cont
     PdpContainerComponent,
     PdpDetailsComponent,
     PdpDetailsFiltersComponent,
-    PdpImageContainerComponent
+    PdpImageContainerComponent,
+    RecommendedProductsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService, AppService, SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

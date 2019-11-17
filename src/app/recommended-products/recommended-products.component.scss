@@ -1,0 +1,60 @@
+.recommended-products {
+  padding: 40px 0 35px;
+  background-color: #f1f1f1;
+  .also-like {
+    color: #4a4a4a;
+    margin: 0 50px 25px;
+    font-family: "Gotham HTF - Medium";
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .products-list {
+    display: flex;
+    align-items: center;
+    .product {
+      margin: 0 6px 0 0;
+      img {
+        width: 330px;
+        height: 378px;
+      }
+      .name {
+        line-height: 20px;
+        color: #000000;
+        font-family: "Gotham HTF - Book";
+        font-size: 16px;
+        font-weight: 300;
+        padding: 6px 0 3px 0;
+      }
+      .price {
+        line-height: 18px;
+        color: #4a4a4a;
+        font-family: "Gotham HTF - Book";
+        font-size: 14px;
+        font-weight: 300;
+      }
+      .label {
+        color: #4a4a4a;
+        font-family: "Gotham HTF - Medium";
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: 0.42px;
+        text-transform: uppercase;
+        position: absolute;
+        margin: 5px;
+        padding: 6px 7px;
+        background: #fff;
+      }
+    }
+    .indicator-arrow {
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      border: 0;
+      margin-right: 5px;
+      background: none;
+      height: 18px;
+      width: 36px;
+    }
+  }
+}

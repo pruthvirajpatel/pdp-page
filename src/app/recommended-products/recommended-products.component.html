@@ -1,0 +1,19 @@
+<div class="recommended-products">
+  <div class="also-like">
+    You’ll Also Like
+  </div>
+  <div class="products-list">
+    <button class="indicator-arrow" [disabled]="activeIndex == 0" (click)="setActiveIndex(-1)">
+      <img src="assets/l-recommend-arrow.png" alt="left arrow" />
+    </button>
+    <figure class="product" *ngFor="let product of products">
+      <div class="label" *ngIf="product.label">{{product.label}}</div>
+      <img src="assets/recommend/{{product.imageUrl}}" alt="{{products.imageUrl}}">
+      <figcaption class="name">{{product.name}}</figcaption>
+      <figcaption class="price">{{product.price}}</figcaption>
+    </figure>
+    <button class="indicator-arrow" [disabled]="activeIndex == (products.length-1)" (click)="setActiveIndex(1)">
+      <img src="assets/r-recommend-arrow.png" alt="right arrow" />
+    </button>
+  </div>
+</div>

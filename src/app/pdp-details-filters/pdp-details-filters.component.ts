@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-pdp-details-filters',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pdp-details-filters.component.scss']
 })
 export class PdpDetailsFiltersComponent implements OnInit {
+  product = {};
   selectedColor = 'blue.png';
   sizes = [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13];
   colors = [
@@ -21,9 +23,15 @@ export class PdpDetailsFiltersComponent implements OnInit {
     'violet.png',
     'brown.png'
   ];
-  constructor() { }
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit() {
+
+    this.sharedService.products$.subscribe(data => {
+      if (data && data.length) {
+        this.product = data[0];
+      }
+    });
   }
 
 }
