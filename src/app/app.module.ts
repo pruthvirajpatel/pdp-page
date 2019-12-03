@@ -15,6 +15,7 @@ import { AppService } from './app.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedService } from './shared.service';
 import { FeaturesStripComponent } from './features-strip/features-strip.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FeaturesStripComponent } from './features-strip/features-strip.componen
     PdpDetailsFiltersComponent,
     PdpImageContainerComponent,
     RecommendedProductsComponent,
-    FeaturesStripComponent
+    FeaturesStripComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

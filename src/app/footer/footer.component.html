@@ -1,0 +1,32 @@
+<div class="footer-wrapper">
+  <div class="footer">
+    <ul class="list" *ngFor="let list of footerList | keyvalue: defaultSorting">
+      <li class="title">
+        {{list['key']}}
+      </li>
+      <ng-container *ngFor="let listValue of list['value']; let last = last;">
+        <li>
+          {{listValue}}
+        </li>
+        <li *ngIf="((list['key'] == 'pop up stores') && last)">
+          <input type="text" class="input-field store-search" placeholder="Find your sneakers here" />
+          <img src="assets/search.png" class="search" alt="" />
+        </li>
+      </ng-container>
+      <ng-container *ngIf="(list['key'] == 'newsletter')">
+        <li class="news-letter">
+          <input type="text" class="input-field email" placeholder="Enter email" />
+          <button class="join-us">join us</button>
+        </li>
+        <li class="social-icons">
+          <img src="assets/social.png" alt="" />
+          <img src="assets/facebook.png" alt="" />
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+  <hr class="hr-line" />
+  <div class="copyright">
+    Copyright © 2019 CARIUMA. All Rights Reserved. Terms of Use | Privacy Policy
+  </div>
+</div>
